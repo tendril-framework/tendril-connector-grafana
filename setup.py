@@ -30,7 +30,7 @@ def read(fname):
 
 core_dependencies = [
     'grafana-client',
-    'slugify',
+    'python-slugify',
 ]
 
 install_requires = core_dependencies + ['wheel']
