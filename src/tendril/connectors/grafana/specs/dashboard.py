@@ -1,0 +1,4 @@
+
+
+class DashboardSpecBase(object):
+    pass

@@ -88,7 +88,21 @@ ConfigOption(
         default='.tendril.link',
         doc="Domain suffix to use for team emails. This is not particularly "
             "important, it just is."
-    )
+    ),
+    ConfigOption(
+        'GRAFANA_DATASOURCE_INFLUXDB_MONITORS',
+        default='None',
+        doc="InfluxDB datasource to use for Grafana for Tendril Monitors. This should be separately be "
+            "configured and prepared, and only the Name should be provided here."
+    ),
+    ConfigOption(
+        'GRAFANA_DATASOURCE_BACKEND_READER',
+        default='None',
+        doc="PostgreSQL datasource to use for Grafana for Tendril Backend Read. This should be "
+            "separately be configured and prepared, and only the Name should be provided here. "
+            "Typically, this would be a user on the primary database with Read Only access. "
+            "Currently, we only use the Interest table."
+    ),
 ]
 
 

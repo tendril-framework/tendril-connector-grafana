@@ -7,10 +7,6 @@ from tendril.utils import log
 logger = log.get_logger(__name__)
 
 
-async def set_folder_permissions(uid=None, permissions=None):
-    pass
-
-
 async def check_create_folder(uid=None, parent_uid=None, title=None, team_id=None):
     try:
         existing = await grafana.folder.get_folder(uid)
