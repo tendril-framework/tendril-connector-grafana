@@ -30,7 +30,7 @@ def read(fname):
 
 core_dependencies = [
     # 'grafana-client',
-    'git+https://github.com/chintal/grafana-client.git',
+    "grafana-client @ git+https://github.com/chintal/grafana-client.git",
     'python-slugify',
 ]
 
