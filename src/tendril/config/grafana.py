@@ -44,6 +44,13 @@ config_elements_grafana = [
         "Whether to use SSL (https)."
     ),
     ConfigOption(
+        'GRAFANA_BASE_URL',
+        "''",
+        "Base URL to use for Grafana Embed Links. This is technically the same as the "
+        "server pointed to by GRAFANA_SERVER-*, but must be spearately configured for quirky "
+        "reasons related to deployment topologies."
+    ),
+    ConfigOption(
         'GRAFANA_ORG',
         "1",
         "Grafana Organization to use. This is normally 1, unless the Grafana is multi-tenant. "
@@ -57,7 +64,8 @@ config_elements_grafana = [
 ConfigOption(
         'GRAFANA_ADMIN_PASSWORD',
         "'admin'",
-        "Password to use with Grafana Admin API interfaces needing Basic Auth."
+        "Password to use with Grafana Admin API interfaces needing Basic Auth.",
+        masked=True
     ),
     ConfigOption(
         'GRAFANA_PROVISIONER_TOKEN',
@@ -102,6 +110,14 @@ ConfigOption(
             "separately be configured and prepared, and only the Name should be provided here. "
             "Typically, this would be a user on the primary database with Read Only access. "
             "Currently, we only use the Interest table."
+    ),
+    ConfigOption(
+        'GRAFANA_LIBRARIES_FOLDER',
+        default='"Library"',
+        doc="Top level folder for Grafana Library panels. Generally, users are expected to have full "
+            "read acces to this folder and everything beneath this. The actual folder structure within "
+            "is somewhat implementation / instance dependent. Presently, we are implementing for folders "
+            "to have the lowercase singular name of the interest type they apply to."
     ),
 ]
 

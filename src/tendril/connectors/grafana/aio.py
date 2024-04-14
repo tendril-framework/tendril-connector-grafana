@@ -1,6 +1,5 @@
 
 
-import asyncio
 from grafana_client import AsyncGrafanaApi
 from grafana_client import TokenAuth
 

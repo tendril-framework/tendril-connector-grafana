@@ -1,4 +1,0 @@
-
-
-class PanelSpecBase(object):
-    pass
