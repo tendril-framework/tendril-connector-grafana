@@ -15,6 +15,8 @@ logger = log.get_logger(__name__)
 
 
 class GrafanaAuthzDomain(AuthzDomainBase):
+    jwt_spec = {'claims': {'sub': 'user_email'}}
+
     def _get_target_teams(self, user):
         # TODO This needs to also return memberships where the user has access to a child
         #   but not necessarily at the team level. Don't use memberships directly, though.
